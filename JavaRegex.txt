@@ -1,0 +1,154 @@
+To represent a group of string objects according to particular pattern we use Java Regex.
+
+To check the String is availble in the target string.
+
+Class RegexDemo{
+       psvm(String [] args){
+	         Pattern p = Patttern.complie("ab");//Create a pattern object using comiple method .
+			 Matcher m = p.matcher("ababbabb");//create a target string using Matcher class and matcher method
+			 while(m.find()+"...+m.end()+{"..."+m.group()){
+			 count ++
+			 Sout(m.start());
+			 }
+	         sout("total number of occurences" +count);
+	   }
+}
+
+Patttern : Compiled version of regular expression.WEquvalent java object of Regualr expression.
+Pattern.compile() = "Use to create pattern object"
+Matcher: We can use matcher object to match the given pattern in the target string.
+We can create matcher object by using matcher method of pattern class .
+Matcher m = p.matcher("abbbbacd");
+Important method of matcher class :
+boolean find();
+int start();
+int end();
+String group();
+
+[abc] = either 'a'or 'b'or 'c'
+[^abc] = except 'a','b' and 'c'
+[a-z]= any lower case alphabate symbol
+[A-Z] = any upper case alphbate symbol
+[a-zA-Z]= any alphabate
+[0-9] = any digit from 0-9
+[a-zA-Z0-9] = any alphanumeric
+
+===================================================
+
+\s = searching for space character 
+\S = Except sapce character any character 
+\d = Any digit from 0 to 9
+\D = except digit any character
+\w = Any word character 
+\W = Except any word character 
+.  = Any character
+
+===================================================
+Quatifiers : 
+We can use to specify number of occurences to match.
+
+x= a+ we can use quantifiers as to check the consicutive characters.
+a = exatky one a 
+a+ =atleast one a complusory 
+a* = including any number of a including zero number also
+a? = atmost one a or zro a
+
+===================================================
+Patter class split method 
+---------------
+Pattern p = Pattern.complie("\\s");
+String [] s = p.split("Durga Software solution");
+except a  we need to use 
+Pattern p = Pattern.compile("a");
+How to split using . 
+www.google.com
+Pattern p = Pattern.comiple("\\.")
+Pattern p = Patter.complie("[.]")
+
+======================================================
+String s = "Hello durga solutions";
+String [] str = s.split("\\s");
+String class taking pattern as argument where as patter class string method take String as argument.
+
+String Tokeniser :
+Specially designed for tokenisation activity.
+Its in Java.util package
+Ex = StrinTokeniser st =new StringTokenise("DurgaSoft solutions");
+====================================================
+To represent 10 digit mobile number
+
+Rule : Each number  should contain exactly 10 digit.
+       first digit should be 7/8/9
+       solution : [7-9][0-9]{9}	  
+
+To represent 10 /11 digit mobile number
+
+Rule : Each number  should contain exactly 10 digit.
+       first digit should be 7/8/9
+       solution : 0?[7-9][0-9]{9}
+	  
+To represent 10/11/12 digit mobile number
+
+Rule : Each number  should contain exactly 10 digit.
+       first digit should be 7/8/9
+       solution : (0|91)?[7-9][0-9]{9}
+
+=======================================================
+Write a regular expression to represent a mail id:
+
+solution : [a-zA-Z0-9][a-zA-Z0-9_.]*@[a-zA-Z0-9]+([.][a-zA-z])
+
+======================================================
+Example : 
+
+[a-k][0369][a-zA-Z0-9#$]*
+
+To represent all the names starts with A/a;
+[aA][a-zA-Z]*
+
+Last leeter should be ends with L
+
+[A-Za-z]*[lL]
+
+[aA][a-zA-Z]*[lL]
+
+=====================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
